@@ -3,9 +3,9 @@ import {Strategy, ExtractJwt} from 'passport-jwt';
 
 module.exports = app =>{
     const Users = app.db.models.Users;
-    const cfg = app.libs.confg;
+    const cfg = app.libs.config;
     const params = {
-        secretOrKey = cfg.jwtSecret,
+        secretOrKey: cfg.jwtSecret,
         jwtFromRequest: ExtractJwt.fromAuthHeader()
     };
 
